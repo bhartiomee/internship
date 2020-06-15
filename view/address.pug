@@ -1,0 +1,51 @@
+extends base.pug
+
+block scripts
+    script(src="../static/index.js")
+
+
+block style
+    style
+        include ../static/style.css
+
+block content
+    #table
+        h1.heading.add-heading Your saved address
+        table.table
+            thead
+                tr
+                    th Name
+                    th Pin
+                    th Address line-1
+                    th Landmark
+                    th City
+                    th State
+                    th Country
+                    th Phone No.
+            tbody
+                each detail in details ? detail:[]
+                    each add in details
+                        tr
+                            td #{detail.name}
+                            td #{detail.pin}
+                            td #{detail.Street}
+                            td #{detail.landark}
+                            td #{detail.city}
+                            td #{detail.state}
+                            td #{detail.country}
+    
+    //- div.area                        
+    //-     each detail in details ? detail:[]
+    //-         .div.details
+    //-                 div.name.item Name: #{detail.name}
+    //-                 div.pin.item Pin: #{detail.pin}
+    //-                 div.street.item Address line-1: #{detail.Street}
+    //-                 div.landmark.item Landmark: #{detail.landark}
+    //-                 div.city.item City #{detail.city}
+    //-                 div.state.item State: #{detail.state}
+    //-                 div.contry.item Country: #{detail.country}
+    //-                 div.phone.item Phone: #{detail.phone}
+
+            
+
+

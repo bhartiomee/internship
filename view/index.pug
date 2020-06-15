@@ -1,0 +1,39 @@
+extends base.pug
+
+block scripts
+    script(src="../static/index.js")
+
+block style
+    style
+        include ../static/style.css
+
+block content
+    .container
+        h1.heading
+            | Your Details
+        form.myForm(action='/details' method='post')
+            .form-group
+                label(for='name') Name
+                input#name(type='text' name='name' required='')
+            .form-group
+                label(for='pin-code') Pin
+                input#pin(type='text' name='pin' maxlength='6' required='')
+            .form-group
+                label(for='add-1') Address line-1
+                input#add-1(type='text' name='Street' required='' placeholder='Street/house no')
+            .form-group
+                label(for='landmark') Address line-2
+                input#landmark(type='text' name='landark' required='' placeholder='landmark')
+            .form-group
+                label(for='city') City
+                input#city(type='text' name='city' required='')
+            .form-group
+                label(for='state') State
+                input#state(type='text' name='state' required='')
+            .form-group
+                label(for='country') Country
+                input#country(type='text' name='country' required='')
+            .form-group
+                label(for='phone') Phone No.
+                input#phone(type='text' name='phone' required='')
+            button.btn(type='submit' name='submit') Add Address
